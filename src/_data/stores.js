@@ -89,59 +89,23 @@ module.exports = {
         url: ""                 // TODO: Tripadvisor のページURL（空ならボタン非表示）
       },
 
-      // ===== コース ===== ★内容は仮。実メニューに差し替えてください
-      courses: [
-        {
-          name: "Wagyu KBBQ",
-          price: "",            // TODO: 例 "₩ 89,000"（空なら非表示）
-          price_note: "per person · tax included",
-          price_value: "",      // TODO: 構造化データ用の数値のみ 例 "89000"
-          items: [
-            "Assorted banchan &amp; fresh ssam",
-            "Wagyu <em>chadolbaegi</em> — brisket, seared at the table",
-            "Wagyu <em>galbisal</em> — marbled short rib",
-            "Charcoal-grilled wagyu galbi, signature marinade",
-            "Doenjang jjigae &amp; steamed rice",
-            "Seasonal dessert"
-          ]
-        },
-        {
-          name: "Vegan &amp; Halal",
-          price: "",            // TODO
-          price_note: "per person · tax included",
-          price_value: "",
-          items: [
-            "Assorted banchan (all plant-based)",
-            "Grilled king oyster mushroom &amp; seasonal vegetables",
-            "Plant-based bulgogi, gluten-free sauce",
-            "Kimchi jjigae (vegan stock)",
-            "Steamed rice",
-            "Seasonal dessert"
-          ]
-        }
-      ],
 
       // ===== 文言の上書き =====（ラーメン/丼の表現を KBBQ に）
       copy: {
-        meta_desc: "Wagyu Korean BBQ Halal KBBQ Vegan Myeongdong Restaurant — halal-friendly wagyu Korean BBQ in Myeongdong, Seoul.",
+        meta_desc: "Wagyu Korean BBQ Halal KBBQ Vegan Myeongdong Restaurant — halal-friendly wagyu Korean BBQ in Myeongdong, Seoul. Muslim-friendly, vegan & gluten-free options.",
         og_desc: "Halal-friendly wagyu Korean BBQ in Myeongdong, Seoul.",
-        hero_kicker: "MICHELIN",       // TODO: 韓国店でミシュラン表記を出さないなら "HALAL" などに
-        hero_sub: "Supervised",
+        hero_kicker: "HALAL",
+        hero_sub: "Korean BBQ",
         philosophy_title: "Three principles<br>One flame",
         philosophy_lead: "Every cut is built on three uncompromising commitments — to craft, to faith, and to the quality of the wagyu itself.",
         pillars: [
-          { num: "壱", title: "Michelin Supervised", text: "Every recipe and marinade overseen by a Michelin Bib Gourmand chef." },
-          { num: "弐", title: "Halal Muslim Friendly", text: "Every ingredient, utensil and process — uncompromisingly, transparently halal-friendly." },
-          { num: "参", title: "Premium Wagyu", text: "Carefully selected wagyu, grilled with restraint to honour its natural depth." }
+          { num: "01", title: "Halal Muslim Friendly", text: "Every ingredient, utensil and process — uncompromisingly, transparently halal-friendly." },
+          { num: "02", title: "Vegan Options", text: "A full plant-based Korean BBQ set, grilled on a separate plate." },
+          { num: "03", title: "Premium Wagyu", text: "Carefully selected wagyu, grilled at your table with restraint to honour its natural depth." }
         ],
-        concept_title: "Fire",
-        concept_lead: "Fire is the theme of the experience — charcoal, smoke, and wagyu seared at your table.",
-        concept_cells: ["Tableside charcoal", "Wagyu galbi", "Smoke"],
         gallery_eyebrow: "The Grill",
         gallery_title: "A study in detail",
         gallery_label: "The signature cut",
-        menu_title: "Two courses,<br>one fire",
-        menu_lead: "We serve tasting courses only. A complete experience of wagyu and Michelin-supervised cooking, grilled in front of you. Choose the course that best suits your evening.",
         halal_text: "A halal-friendly menu, designed so Muslim guests can enjoy authentic wagyu Korean BBQ with confidence."
       }
     },
@@ -192,8 +156,9 @@ module.exports = {
       // ===== 画像 =====
       hero_image: "/assets/steakburgerpizza/hero.jpg",
       gallery_images: [
-        { img: "/assets/steakburgerpizza/steak.jpg",       label: "Wagyu steak" },
-        { img: "/assets/steakburgerpizza/steak-burger.jpg", label: "Steak & wagyu burger" }
+        { img: "/assets/steakburgerpizza/steak.jpg",        label: "Wagyu steak" },
+        { img: "/assets/steakburgerpizza/steak-burger.jpg",  label: "Steak & wagyu burger" },
+        { img: "/assets/steakburgerpizza/pizza.jpg",         label: "Wagyu pizza, stone-baked" }
       ],
 
 
@@ -207,59 +172,23 @@ module.exports = {
         url: ""                 // TODO: Tripadvisor のページURL（空ならボタン非表示）
       },
 
-      // ===== コース ===== ★内容は仮
-      courses: [
-        {
-          name: "Steak &amp; Burger",
-          price: "",            // TODO
-          price_note: "per person · tax included",
-          price_value: "",
-          items: [
-            "Amuse — wagyu tartare on gluten-free crisp",
-            "Seasonal salad",
-            "Wagyu steak — tenderloin or sirloin, seared to order",
-            "Halal wagyu hamburger, gluten-free bun available",
-            "Truffle fries",
-            "Seasonal dessert"
-          ]
-        },
-        {
-          name: "Pizza &amp; Wagyu",
-          price: "",            // TODO
-          price_note: "per person · tax included",
-          price_value: "",
-          items: [
-            "Amuse — marinated seasonal vegetables",
-            "Stone-baked wagyu pizza, spicy mayo &amp; scallion",
-            "Wagyu steak — chef's cut of the day",
-            "Vegan cheese / gluten-free dough on request",
-            "Focaccia or steamed rice",
-            "Seasonal dessert"
-          ]
-        }
-      ],
 
       // ===== 文言の上書き =====
       copy: {
         meta_desc: "Steak Hamburger Pizza Halal Wagyu Vegan Gluten Free Myeongdong Restaurant — halal wagyu steak, burgers and pizza in Myeongdong, Seoul.",
         og_desc: "Halal wagyu steak, burgers and pizza in Myeongdong, Seoul.",
-        hero_kicker: "MICHELIN",       // TODO: ミシュラン表記の可否
-        hero_sub: "Supervised",
+        hero_kicker: "HALAL",
+        hero_sub: "Steak · Burger · Pizza",
         philosophy_title: "Three principles<br>One fire",
         philosophy_lead: "Every plate is built on three uncompromising commitments — to craft, to faith, and to the quality of the wagyu itself.",
         pillars: [
-          { num: "壱", title: "Michelin Supervised", text: "Every recipe, from patty to pizza dough, overseen by a Michelin Bib Gourmand chef." },
-          { num: "弐", title: "Halal · Vegan · Gluten Free", text: "Halal-friendly throughout, with vegan and gluten-free options across the menu." },
-          { num: "参", title: "Premium Wagyu", text: "Carefully selected wagyu, prepared with restraint to honour its natural depth." }
+          { num: "01", title: "Halal Muslim Friendly", text: "Every ingredient, utensil and process — uncompromisingly, transparently halal-friendly." },
+          { num: "02", title: "Vegan & Gluten Free", text: "Gluten-free buns and pizza dough, plus vegan patties and cheese, on request." },
+          { num: "03", title: "Premium Wagyu", text: "Carefully selected wagyu — in the steak, in the patty, and on the pizza." }
         ],
-        concept_title: "Fire",
-        concept_lead: "Fire is the theme of the experience — the grill, the stone oven, and wagyu finished in front of you.",
-        concept_cells: ["Seared wagyu steak", "Stone-baked pizza", "Smoke"],
         gallery_eyebrow: "The Plate",
         gallery_title: "A study in detail",
         gallery_label: "The signature plate",
-        menu_title: "Two courses,<br>one fire",
-        menu_lead: "We serve tasting courses only. A complete experience of wagyu and Michelin-supervised cooking, plated and finished in front of you. Choose the course that best suits your evening.",
         halal_text: "A halal-friendly menu with vegan and gluten-free options, designed so every guest can enjoy authentic wagyu with confidence."
       }
     }
