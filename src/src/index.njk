@@ -1,0 +1,72 @@
+---
+permalink: "/index.html"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Halal Wagyu Myeongdong · Seoul</title>
+<meta name="description" content="Halal wagyu in Myeongdong, Seoul — Korean BBQ / Steak, Burger &amp; Pizza.">
+{% if stores.brand.ga4_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ stores.brand.ga4_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ stores.brand.ga4_id }}', { 'brand': '{{ stores.brand.brand_slug }}' });
+</script>
+{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --red:#D10100; --ink:#1A1110; --white:#fff; --cream:#FFF6F2; --gold:#E8B84B; }
+body { font-family:'Noto Sans JP',sans-serif; background:var(--ink); color:var(--cream); min-height:100svh; display:flex; flex-direction:column; -webkit-font-smoothing:antialiased; }
+main { flex:1; display:flex; flex-direction:column; justify-content:center; max-width:1040px; width:100%; margin:0 auto; padding:72px 24px; }
+.eyebrow { font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); text-align:center; }
+h1 { font-family:'Anton',sans-serif; font-size:clamp(2.6rem,10vw,4.6rem); line-height:.98; letter-spacing:.01em; text-align:center; margin-top:16px; text-transform:uppercase; }
+h1 em { color:var(--red); font-style:normal; }
+.rule { width:56px; height:3px; background:var(--red); margin:22px auto 0; }
+.lead { text-align:center; margin-top:18px; font-size:14px; color:rgba(255,246,242,.6); letter-spacing:.04em; }
+.cards { display:grid; gap:18px; margin-top:52px; }
+@media (min-width:820px){ .cards { grid-template-columns:1fr 1fr; gap:24px; } }
+.card { display:block; text-decoration:none; color:inherit; position:relative; overflow:hidden; border:1px solid rgba(232,184,75,.28); transition:border-color .3s, transform .3s; }
+.card:hover { border-color:var(--red); transform:translateY(-4px); }
+.card-img { aspect-ratio:4/3; background-size:cover; background-position:center; }
+.card-body { padding:22px 24px 26px; background:rgba(255,255,255,.03); }
+.card-kick { font-family:'Oswald',sans-serif; font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.card-name { font-family:'Anton',sans-serif; font-size:1.65rem; line-height:1.1; text-transform:uppercase; }
+.card-meta { margin-top:10px; font-size:12px; color:rgba(255,246,242,.45); line-height:1.7; }
+.card-go { display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--red); }
+footer { text-align:center; padding:30px 24px 40px; border-top:1px solid rgba(255,246,242,.08); }
+footer p { font-family:'Oswald',sans-serif; font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,246,242,.3); }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Myeongdong · Seoul · 明洞</p>
+  <h1>Halal <em>Wagyu</em><br>in Myeongdong</h1>
+  <div class="rule"></div>
+  <p class="lead">Michelin-supervised · Halal Muslim Friendly · Authentic Japanese Wagyu</p>
+
+  <div class="cards">
+    {% for store in stores.stores %}
+    <a class="card" href="/{{ store.slug }}/">
+      <div class="card-img" style="background-image:url('{{ store.hero_image }}');"></div>
+      <div class="card-body">
+        <p class="card-kick">{{ store.city }} · {{ store.pref }}</p>
+        <p class="card-name">{{ store.name_short }}</p>
+        <p class="card-meta">{{ store.name_full_en }}</p>
+        <span class="card-go">View restaurant
+          <svg width="16" height="10" viewBox="0 0 18 10" fill="none"><path d="M0 5h16M12 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+        </span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</main>
+<footer><p>Halal Wagyu Korea</p></footer>
+</body>
+</html>
