@@ -328,16 +328,6 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
 .hero-subcta a:hover { color: #fff; border-color: #fff; }
 .hero-subcta-sep { color: rgba(255,255,255,0.4); margin: 0 10px; }
 
-/* コース価格 */
-  font-family: 'Oswald', sans-serif;
-  font-size: 20px; font-weight: 500; letter-spacing: 0.04em;
-  color: var(--red);
-  margin-bottom: 14px;
-}
-  display: block; margin-top: 4px;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(26,17,16,0.45); font-weight: 400;
-}
 
 .hero-content {
   position: relative; z-index: 2;
@@ -355,6 +345,7 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
 }
 @keyframes ruleIn { to { transform: scaleX(1); } }
 .hero-kicker {
+  color: var(--white);
   font-family: 'Anton', sans-serif;
   font-size: 44px;
   letter-spacing: 0.06em;
@@ -366,6 +357,7 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
   animation: riseIn 0.8s cubic-bezier(.2,.8,.2,1) 2.0s forwards;
 }
 .hero-supervised {
+  color: var(--white);
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   font-size: 13px;
@@ -378,6 +370,7 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
   animation: fadeIn 0.7s ease 2.3s forwards;
 }
 .hero-title {
+  color: var(--white);
   font-family: 'Anton', sans-serif;
   font-size: 26px;
   letter-spacing: 0.04em;
@@ -763,7 +756,7 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
 
 <!-- OPENING -->
 <div class="opening" id="opening">
-  <div class="open-kicker">{{ C.hero_kicker or "HALAL" }}</div>
+  <div class="open-kicker">{{ C.hero_kicker or "WAGYU" }}</div>
   <div class="open-name">{{ store.name_short }}</div>
   <div class="open-bar"></div>
 </div>
@@ -785,8 +778,8 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
     <div class="hero-veil"></div>
     <div class="hero-content">
       <div class="hero-rule"></div>
-      <h1 class="hero-kicker">{{ C.hero_kicker or "HALAL" }}</h1>
-      <div class="hero-supervised">{{ C.hero_sub or "Muslim Friendly" }}</div>
+      <h1 class="hero-kicker">{{ C.hero_kicker or "WAGYU" }}</h1>
+      <div class="hero-supervised">{{ C.hero_sub or "Halal · Muslim Friendly" }}</div>
       <div class="hero-title">{{ store.name_short }}</div>
       {% if resAvail %}
       <a href="{{ resHref }}"{% if resExt %} target="_blank" rel="noopener"{% endif %} class="hero-cta" data-ga-event="reserve_click" data-ga-location="hero">

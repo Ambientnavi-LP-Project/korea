@@ -94,8 +94,8 @@ module.exports = {
       copy: {
         meta_desc: "Wagyu Korean BBQ Halal KBBQ Vegan Myeongdong Restaurant — halal-friendly wagyu Korean BBQ in Myeongdong, Seoul. Muslim-friendly, vegan & gluten-free options.",
         og_desc: "Halal-friendly wagyu Korean BBQ in Myeongdong, Seoul.",
-        hero_kicker: "HALAL",
-        hero_sub: "Korean BBQ",
+        hero_kicker: "WAGYU",
+        hero_sub: "Halal · Korean BBQ",
         philosophy_title: "Three principles<br>One flame",
         philosophy_lead: "Every cut is built on three uncompromising commitments — to craft, to faith, and to the quality of the wagyu itself.",
         pillars: [
@@ -177,8 +177,8 @@ module.exports = {
       copy: {
         meta_desc: "Steak Hamburger Pizza Halal Wagyu Vegan Gluten Free Myeongdong Restaurant — halal wagyu steak, burgers and pizza in Myeongdong, Seoul.",
         og_desc: "Halal wagyu steak, burgers and pizza in Myeongdong, Seoul.",
-        hero_kicker: "HALAL",
-        hero_sub: "Steak · Burger · Pizza",
+        hero_kicker: "WAGYU",
+        hero_sub: "Halal · Steak · Burger · Pizza",
         philosophy_title: "Three principles<br>One fire",
         philosophy_lead: "Every plate is built on three uncompromising commitments — to craft, to faith, and to the quality of the wagyu itself.",
         pillars: [
