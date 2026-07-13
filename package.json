@@ -2,11 +2,13 @@
   "name": "halal-wagyu-korea",
   "version": "1.0.0",
   "private": true,
-  "description": "Halal Wagyu Korea (Myeongdong) - Eleventy static site",
   "scripts": {
     "start": "eleventy --serve",
     "dev": "eleventy --serve",
     "build": "eleventy"
+  },
+  "engines": {
+    "node": "22.x"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
