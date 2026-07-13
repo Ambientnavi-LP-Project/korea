@@ -1,0 +1,63 @@
+---
+permalink: "/index.html"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Halal Wagyu in Myeongdong, Seoul — Korean BBQ / Steak, Burger & Pizza. Muslim-Friendly. 5th-generation Wagyu butcher since 1962." />
+  <title>Halal Wagyu Myeongdong · Seoul — Korean BBQ / Steak, Burger &amp; Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #080808; color: #f5ede0; font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; min-height: 100svh; display: flex; flex-direction: column; }
+    .label { font-size: 10px; letter-spacing: .48em; color: #c9a84c; font-family: 'Cormorant Garamond', serif; text-transform: uppercase; }
+    .gold-rule { display: block; width: 36px; height: 1.5px; background: #c9a84c; margin: 14px auto 0; }
+    main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 64px 24px; max-width: 900px; margin: 0 auto; width: 100%; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 9vw, 3.4rem); font-weight: 700; line-height: 1.1; margin-top: 14px; }
+    h1 em { color: #c9a84c; font-style: normal; }
+    .sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(.95rem, 3vw, 1.15rem); color: rgba(245,237,224,.7); letter-spacing: .06em; margin-top: 16px; }
+    .cards { display: grid; gap: 16px; margin-top: 44px; }
+    @media (min-width: 768px) { .cards { grid-template-columns: 1fr 1fr; gap: 20px; } }
+    .card { display: block; text-decoration: none; color: inherit; border: 1px solid rgba(201,168,76,.3); border-radius: 4px; overflow: hidden; background: rgba(245,237,224,.03); transition: border-color .25s, transform .25s; }
+    .card:hover { border-color: rgba(201,168,76,.75); transform: translateY(-3px); }
+    .card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    .card-body { padding: 18px 20px 22px; }
+    .card-kick { font-size: 10px; letter-spacing: .22em; color: #c9a84c; margin-bottom: 8px; }
+    .card-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: .02em; line-height: 1.25; margin-bottom: 8px; }
+    .card-meta { font-size: 11px; color: rgba(245,237,224,.45); line-height: 1.7; }
+    footer { text-align: center; padding: 28px 24px 36px; border-top: 1px solid rgba(201,168,76,.12); }
+    footer p { font-size: 10px; color: rgba(245,237,224,.32); letter-spacing: .28em; }
+  </style>
+</head>
+<body>
+  <main>
+    <div style="text-align:center;">
+      <p class="label">MYEONGDONG · SEOUL · 明洞</p>
+      <h1>Halal <em>Wagyu</em><br/>in Myeongdong</h1>
+      <span class="gold-rule"></span>
+      <p class="sub">Muslim-Friendly &nbsp;·&nbsp; 5th Generation Wagyu Butcher since 1962</p>
+    </div>
+
+    <div class="cards">
+      {% for store in stores.stores %}
+      <a class="card" href="/{{ store.slug }}/">
+        <img class="card-img" src="{{ store.hero_cols[0].src[0] if store.hero_cols[0].type == 'images' else store.menu[0].img }}" alt="{{ store.name_full_en }}" loading="lazy" />
+        <div class="card-body">
+          <p class="card-kick">{{ store.concept_kick }}</p>
+          <p class="card-name">{{ store.concept }}</p>
+          <p class="card-meta">{{ store.city }} · {{ store.station_en }}<br/>{{ store.hours }} · {{ store.hours_note }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </main>
+
+  <footer>
+    <p>EST. 1962 &nbsp;·&nbsp; 5TH GEN. BUTCHER</p>
+  </footer>
+</body>
+</html>
