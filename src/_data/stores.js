@@ -30,19 +30,19 @@ module.exports = {
       slug: "kbbq",
 
       // ===== 店名 =====
-      name_full_en: "Steak Hamburger Pizza Halal Wagyu Vegan Gluten Free Myeongdong Restaurant 明洞和牛餐厅",
+      name_full_en: "Wagyu Korean BBQ Halal KBBQ Wagyu Gluten Free Myeongdong Restaurant 明洞韩式烧烤",
       name_short: "Myeongdong KBBQ",
       name_cn: "明洞韩式烧烤",
 
       // ===== 立地 ===== ★あとで差し替え
       city: "Myeongdong",
       pref: "Seoul",
-      address_en: "1F, 23-3 Myeongdong 4-gil, Jung-gu",
-      address_postal: "",       // TODO: 郵便番号（韓国の5桁。例 04536）
+      address_en: "1F, 23 Myeongdong 4-gil, Jung-gu",
+      address_postal: "04536",       // TODO: 郵便番号（韓国の5桁。例 04536）
 
       // ===== 連絡先 =====
-      tel_display: "010-3280-5765",
-      tel_raw: "821032805765",  // +82 + 先頭の0を除いた番号
+      tel_display: "010-9871-5765",
+      tel_raw: "821098715765",  // +82 + 先頭の0を除いた番号
 
       // ===== 営業 ===== ★あとで差し替え
       hours: "11:00 – 23:00",
@@ -122,12 +122,12 @@ module.exports = {
       // ===== 立地 ===== ★あとで差し替え
       city: "Myeongdong",
       pref: "Seoul",
-      address_en: "1F, 23 Myeongdong 4-gil, Jung-gu",
-      address_postal: "",       // TODO: 郵便番号
+      address_en: "1F, 23-3 Myeongdong 4-gil, Jung-gu",
+      address_postal: "04536",       // TODO: 郵便番号
 
       // ===== 連絡先 =====
-      tel_display: "010-9871-5765",
-      tel_raw: "821098715765",  // +82 + 先頭の0を除いた番号
+      tel_display: "010-3280-5765",
+      tel_raw: "821032805765",  // +82 + 先頭の0を除いた番号
 
       // ===== 営業 ===== ★あとで差し替え
       hours: "11:00 – 23:00",
