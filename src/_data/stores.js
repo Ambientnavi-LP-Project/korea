@@ -115,7 +115,7 @@ module.exports = {
       slug: "steakburgerpizza",
 
       // ===== 店名 =====
-      name_full_en: "Steak Hamburger Pizza Halal Wagyu Vegan Gluten Free Myeongdong Restaurant 明洞和牛餐厅",
+      name_full_en: "Wagyu Korean Hamburger Steak Pizza Halal Vegan Myeongdong Restaurant 明洞和牛餐厅",
       name_short: "Myeongdong Steak",
       name_cn: "明洞和牛餐厅",
 
