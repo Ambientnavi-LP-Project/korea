@@ -30,7 +30,7 @@ module.exports = {
       slug: "kbbq",
 
       // ===== 店名 =====
-      name_full_en: "Wagyu Korean BBQ Halal KBBQ Wagyu Gluten Free Myeongdong Restaurant 明洞韩式烧烤",
+      name_full_en: "Wagyu Korean BBQ Halal KBBQ Gluten Free Myeongdong Restaurant 明洞韩式烧烤",
       name_short: "Myeongdong KBBQ",
       name_cn: "明洞韩式烧烤",
 
