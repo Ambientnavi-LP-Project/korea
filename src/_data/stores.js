@@ -37,7 +37,7 @@ module.exports = {
       // ===== 立地 ===== ★あとで差し替え
       city: "Myeongdong",
       pref: "Seoul",
-      address_en: "1F, 23 Myeongdong 4-gil, Jung-gu",
+      address_en: "1F, 23 Myeongdong 4-gil, Jung-gu Seoul",
       address_postal: "04536",       // TODO: 郵便番号（韓国の5桁。例 04536）
 
       // ===== 連絡先 =====
@@ -45,7 +45,7 @@ module.exports = {
       tel_raw: "821098715765",  // +82 + 先頭の0を除いた番号
 
       // ===== 営業 ===== ★あとで差し替え
-      hours: "11:00 – 23:00",
+      hours: "10:00 – 25:00",
       hours_note: "",
 
       // ===== 予約・地図 ===== ★あとで差し替え
@@ -62,8 +62,8 @@ module.exports = {
       address_country: "KR",
       currency: "KRW",
       price_range: "",          // TODO: 例 "₩₩₩"
-      opens: "11:00",           // TODO: 実際の開店時刻（24h表記）
-      closes: "23:00",          // TODO: 実際の閉店時刻
+      opens: "10:00",           // TODO: 実際の開店時刻（24h表記）
+      closes: "25:00",          // TODO: 実際の閉店時刻
       geo_lat: "",              // TODO: 緯度（Googleマップから）
       geo_lng: "",              // TODO: 経度
       serves_cuisine: ["Korean BBQ", "Wagyu", "Halal", "Vegan"],
@@ -122,7 +122,7 @@ module.exports = {
       // ===== 立地 ===== ★あとで差し替え
       city: "Myeongdong",
       pref: "Seoul",
-      address_en: "1F, 23-3 Myeongdong 4-gil, Jung-gu",
+      address_en: "1F, 23-3 Myeongdong 4-gil, Jung-gu Seoul",
       address_postal: "04536",       // TODO: 郵便番号
 
       // ===== 連絡先 =====
@@ -130,7 +130,7 @@ module.exports = {
       tel_raw: "821032805765",  // +82 + 先頭の0を除いた番号
 
       // ===== 営業 ===== ★あとで差し替え
-      hours: "11:00 – 23:00",
+      hours: "10:00 – 25:00",
       hours_note: "",
 
       // ===== 予約・地図 ===== ★あとで差し替え
@@ -147,8 +147,8 @@ module.exports = {
       address_country: "KR",
       currency: "KRW",
       price_range: "",          // TODO: 例 "₩₩₩"
-      opens: "11:00",           // TODO: 実際の開店時刻（24h表記）
-      closes: "23:00",          // TODO: 実際の閉店時刻
+      opens: "10:00",           // TODO: 実際の開店時刻（24h表記）
+      closes: "25:00",          // TODO: 実際の閉店時刻
       geo_lat: "",              // TODO: 緯度（Googleマップから）
       geo_lng: "",              // TODO: 経度
       serves_cuisine: ["Steak", "Burger", "Pizza", "Wagyu", "Halal", "Vegan", "Gluten Free"],
