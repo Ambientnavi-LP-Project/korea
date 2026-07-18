@@ -100,7 +100,7 @@ module.exports = {
         philosophy_lead: "Every cut is built on three uncompromising commitments — to craft, to faith, and to the quality of the wagyu itself.",
         pillars: [
           { num: "01", title: "Halal Muslim Friendly", text: "Every ingredient, utensil and process — uncompromisingly, transparently halal-friendly." },
-          { num: "02", title: "Vegan Options", text: "A full plant-based Korean BBQ set, grilled on a separate plate." },
+          { num: "02", title: "Gluten Free Options", text: "A full plant-based Food set option." },
           { num: "03", title: "Premium Wagyu", text: "Carefully selected wagyu, grilled at your table with restraint to honour its natural depth." }
         ],
         gallery_eyebrow: "The Grill",
@@ -183,7 +183,7 @@ module.exports = {
         philosophy_lead: "Every plate is built on three uncompromising commitments — to craft, to faith, and to the quality of the wagyu itself.",
         pillars: [
           { num: "01", title: "Halal Muslim Friendly", text: "Every ingredient, utensil and process — uncompromisingly, transparently halal-friendly." },
-          { num: "02", title: "Vegan & Gluten Free", text: "Gluten-free buns and pizza dough, plus vegan patties and cheese, on request." },
+          { num: "02", title: "Vegan & Gluten Free", text: "A full plant-based Food set option." },
           { num: "03", title: "Premium Wagyu", text: "Carefully selected wagyu — in the steak, in the patty, and on the pizza." }
         ],
         gallery_eyebrow: "The Plate",
