@@ -17,7 +17,6 @@
 module.exports = {
   brand: {
     domain: "korean-bbq.halal-food-wagyu.com",
-    ga4_id: "",                 // TODO: GA4 測定ID（空なら GA タグ自体を出力しません）
     meta_pixel_id: "",          // TODO: Meta ピクセルID（空なら出力しません）
     tiktok_pixel_id: "",        // TODO: TikTok ピクセルID（空なら出力しません）
     brand_name: "Halal Wagyu Korea",
