@@ -1,3 +1,4 @@
+```html
 ---
 pagination:
   data: stores.stores
@@ -20,22 +21,13 @@ eleventyComputed:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>{{ store.name_full_en }}</title>
-
-{% if stores.brand.ga4_id %}
-<!-- Google tag (gtag.js) - GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ stores.brand.ga4_id }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ stores.brand.ga4_id }}', {
-    'store_name': '{{ store.slug }}',
-    'store_area': '{{ store.region }}',
-    'brand': '{{ stores.brand.brand_slug }}'
-  });
-</script>
-{% endif %}
-
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5DGT9H6L');</script>
+<!-- End Google Tag Manager -->
 <meta name="description" content="{{ C.meta_desc or (store.name_full_en ~ " — Halal wagyu tasting courses in " ~ store.city ~ ", " ~ store.pref ~ ". Muslim-friendly.") }}">
 <meta property="og:title" content="{{ store.name_short }} · {{ store.city }}">
 <meta property="og:description" content="{{ C.og_desc or ("Halal wagyu tasting courses in " ~ store.city ~ ", " ~ store.pref ~ ".") }}">
@@ -52,10 +44,8 @@ eleventyComputed:
 <link rel="icon" href="/assets/icons/{{ store.slug }}.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/{{ store.slug }}-32.png">
 <link rel="apple-touch-icon" href="/assets/icons/{{ store.slug }}-180.png">
-
 <!-- LCP: ヒーロー画像を先読み -->
 <link rel="preload" as="image" href="{{ store.hero_image }}" fetchpriority="high">
-
 {% if stores.brand.meta_pixel_id %}
 <!-- Meta Pixel -->
 <script>
@@ -69,7 +59,6 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id={{ stores.brand.meta_pixel_id }}&ev=PageView&noscript=1"></noscript>
 {% endif %}
-
 {% if stores.brand.tiktok_pixel_id %}
 <!-- TikTok Pixel -->
 <script>
@@ -79,7 +68,6 @@ fbq('track', 'PageView');
 }(window, document, 'ttq');
 </script>
 {% endif %}
-
 <!-- 広告流入・再訪・モーション低減設定のときはオープニング演出をスキップ（LCP改善） -->
 <script>
 (function(){
@@ -93,11 +81,9 @@ fbq('track', 'PageView');
   } catch (e) {}
 })();
 </script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600&family=Cormorant+Garamond:ital@1&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Shippori+Mincho:wght@400;500;700&family=Yuji+Boku&display=swap" rel="stylesheet">
-
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -134,7 +120,6 @@ body::before {
 }
 /* Make sure interactive layers stay above the texture */
 .opening, .header, .hero, section, footer, .sticky-cta, .float-reserve { position: relative; z-index: 2; }
-
 /* ============ OPENING ============ */
 .opening {
   position: fixed; inset: 0; z-index: 9999;
@@ -183,14 +168,12 @@ body::before {
 @keyframes barGrow { to { width: 160px; } }
 @keyframes steamPulse { 0%,100% { transform: scale(0.8); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 1; } }
 @keyframes openOut { to { opacity: 0; visibility: hidden; transform: translateY(-30px); } }
-
 .page { opacity: 0; animation: pageIn 0.6s ease 1.7s forwards; }
 /* オープニングをスキップする場合（広告流入・再訪・モーション低減） */
 html.skip-opening .opening { display: none; }
 html.skip-opening .page { opacity: 1; animation: none; }
 html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
 @keyframes pageIn { to { opacity: 1; } }
-
 /* ============ TRIPADVISOR ============ */
 .tripadvisor {
   background: var(--cream);
@@ -234,7 +217,6 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
 @media (max-width: 640px) {
   .tripadvisor { padding: 68px 0 76px; }
 }
-
 /* ============ HEADER ============ */
 .header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -268,7 +250,6 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
   transition: all 0.25s ease;
 }
 .header-reserve:hover { background: var(--gold); }
-
 /* ============ HERO ============ */
 .hero {
   position: relative;
@@ -327,8 +308,6 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
 .hero-subcta a { color: rgba(255,255,255,0.72); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.28); padding-bottom: 2px; }
 .hero-subcta a:hover { color: #fff; border-color: #fff; }
 .hero-subcta-sep { color: rgba(255,255,255,0.4); margin: 0 10px; }
-
-
 .hero-content {
   position: relative; z-index: 2;
   width: 100%;
@@ -408,7 +387,6 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
 .hero-cta:hover { background: var(--gold); transform: translateY(-2px); }
 .hero-cta svg { transition: transform 0.25s ease; }
 .hero-cta:hover svg { transform: translateX(4px); }
-
 /* ============ SECTION COMMON ============ */
 section { padding: 80px 24px; }
 .container { max-width: 1160px; margin: 0 auto; }
@@ -461,7 +439,6 @@ section { padding: 80px 24px; }
   text-align: center; max-width: 540px; margin: 0 auto 52px;
   font-size: 16px; line-height: 1.85; color: #4a3a38;
 }
-
 /* ============ PHILOSOPHY ============ */
 .philosophy { background: var(--cream); }
 .pillars-grid { display: flex; flex-direction: column; gap: 16px; }
@@ -498,7 +475,6 @@ section { padding: 80px 24px; }
   margin-bottom: 12px;
 }
 .pillar-text { font-size: 15px; color: #5a4a48; line-height: 1.8; }
-
 /* ============ GALLERY ============ */
 .gallery { padding: 80px 0; background: var(--ink); }
 .gallery .eyebrow { color: var(--gold); }
@@ -530,7 +506,6 @@ section { padding: 80px 24px; }
   .gallery-pair { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
   .gallery-cell { height: 48vh; max-height: 460px; }
 }
-
 /* ============ HALAL ============ */
 .halal { background: var(--red); color: var(--white); position: relative; overflow: hidden; }
 .halal::before {
@@ -561,7 +536,6 @@ section { padding: 80px 24px; }
 }
 .halal-list li:first-child { border-top: 1px solid rgba(255,255,255,0.25); }
 .halal-list .check { color: var(--gold); font-weight: 700; }
-
 /* ============ QUOTE ============ */
 .quote-sec { background: var(--cream); text-align: center; }
 .quote-stars { color: var(--gold); letter-spacing: 0.4em; text-indent: 0.4em; font-size: 18px; margin-bottom: 24px; }
@@ -580,7 +554,6 @@ section { padding: 80px 24px; }
   text-transform: uppercase;
   color: var(--red);
 }
-
 /* ============ INFO ============ */
 .info { background: var(--cream); }
 .info-grid {
@@ -633,7 +606,6 @@ section { padding: 80px 24px; }
 }
 .info-map-btn:hover { background: var(--red-deep); transform: translateY(-2px); }
 .info-map-btn svg { width: 16px; height: 16px; }
-
 /* ============ RESERVE ============ */
 .reserve { background: var(--ink); color: var(--white); text-align: center; }
 .reserve .eyebrow { color: var(--gold); }
@@ -660,7 +632,6 @@ section { padding: 80px 24px; }
 .reserve-cta:hover { background: var(--red-deep); transform: translateY(-2px); }
 .reserve-cta svg { transition: transform 0.25s ease; }
 .reserve-cta:hover svg { transform: translateX(4px); }
-
 /* ============ FOOTER ============ */
 footer { background: var(--red-dark); color: rgba(255,255,255,0.7); padding: 52px 24px calc(96px + env(safe-area-inset-bottom)); text-align: center; }
 .footer-name {
@@ -672,7 +643,6 @@ footer { background: var(--red-dark); color: rgba(255,255,255,0.7); padding: 52p
   max-width: 460px; margin: 0 auto 16px;
 }
 footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
-
 /* ============ STICKY (mobile) ============ */
 .sticky-cta {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
@@ -694,7 +664,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
   color: var(--red); background: var(--white);
   text-decoration: none; padding: 13px 22px;
 }
-
 /* ============ FLOATING (desktop right-bottom) ============ */
 .float-reserve {
   position: fixed; z-index: 95;
@@ -714,11 +683,9 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
 }
 .float-reserve:hover { background: var(--red-deep); transform: translateY(-2px); }
 @keyframes floatIn { to { opacity: 1; } }
-
 /* ============ REVEAL ============ */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
-
 /* ============ TABLET / DESKTOP ============ */
 @media (min-width: 700px) {
   .hero-kicker { font-size: 56px; }
@@ -753,16 +720,17 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
 </style>
 </head>
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DGT9H6L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- OPENING -->
 <div class="opening" id="opening">
   <div class="open-kicker">{{ C.hero_kicker or "WAGYU" }}</div>
   <div class="open-name">{{ store.name_short }}</div>
   <div class="open-bar"></div>
 </div>
-
 <div class="page">
-
   <!-- HEADER -->
   <header class="header" id="header">
     <div class="header-logo">
@@ -770,7 +738,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
     </div>
     {% if resAvail %}<a href="{{ resHref }}"{% if resExt %} target="_blank" rel="noopener"{% endif %} class="header-reserve" data-ga-event="reserve_click" data-ga-location="header">Reserve</a>{% endif %}
   </header>
-
   <!-- HERO -->
   <section class="hero">
     <div class="hero-img"></div>
@@ -795,7 +762,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
       {% endif %}
     </div>
   </section>
-
   <!-- PHILOSOPHY -->
   <section class="philosophy" id="philosophy">
     <div class="container">
@@ -819,7 +785,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
       </div>
     </div>
   </section>
-
   <!-- GALLERY -->
   <section class="gallery" id="gallery">
     <div class="container gallery-intro">
@@ -840,7 +805,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
     </div>
     {% endif %}
   </section>
-
   <!-- HALAL -->
   <section class="halal" id="halal">
     <div class="container">
@@ -854,7 +818,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
       <p class="halal-text reveal">{{ C.halal_text or "A halal-friendly menu, designed so Muslim guests can enjoy authentic wagyu and ramen with confidence." }}</p>
     </div>
   </section>
-
   <!-- TRIPADVISOR -->
   {% if store.tripadvisor and store.tripadvisor.image %}
   {% set ta = store.tripadvisor %}
@@ -864,19 +827,16 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
       <h2 class="ta-title reveal">{{ (ta.headline or "Our Ginza flagship store ranked <em>No.1</em> in the Gourmet &amp; Restaurant category in Tokyo on Tripadvisor.") | safe }}</h2>
       <div class="red-rule reveal"></div>
     </div>
-
     <div class="ta-img-wrap reveal">
       <img class="ta-img" src="{{ ta.image }}" alt="Tripadvisor Tokyo No.1 ranking — Ginza flagship store" loading="lazy">
     </div>
-
     {% if ta.note %}
     <p class="ta-note reveal">{{ ta.note }}</p>
     {% endif %}
-
     {% if ta.url %}
     <div class="ta-cta-wrap reveal">
       <a href="{{ ta.url }}" target="_blank" rel="noopener" class="ta-cta"
-         data-ga-event="tripadvisor_click" data-ga-location="tripadvisor_section">
+         data-ga-event="outbound_click" data-ga-location="tripadvisor_section">
         View on Tripadvisor
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
       </a>
@@ -884,7 +844,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
     {% endif %}
   </section>
   {% endif %}
-
   <!-- INFO -->
   <section class="info" id="info">
     <div class="container">
@@ -922,7 +881,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
         </div>
         {% endif %}
       </div>
-
       <div class="info-features reveal">
         <span class="info-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11h18M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M4 11l1 8h14l1-8"/></svg>Halal-friendly menu</span>
         <span class="info-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v12H5.17L4 17.17V4z"/><path d="M8 9h8M8 12h5"/></svg>Takeout available</span>
@@ -930,7 +888,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
         <span class="info-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1"/></svg>Free Wi-Fi</span>
         <span class="info-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M5 5l14 14"/></svg>Non-smoking</span>
       </div>
-
       {% if store.maps_embed %}
       <div class="info-map-wrap">
         <div class="info-map reveal">
@@ -944,7 +901,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
       {% endif %}
     </div>
   </section>
-
   <!-- RESERVE -->
   <section class="reserve" id="reserve">
     <div class="container">
@@ -959,16 +915,13 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
       {% endif %}
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-name">{{ store.name_full_en }}</div>
     {% if C.footer_note %}<p>{{ C.footer_note }}</p>{% endif %}
     <p>© {{ store.name_full_en }}. All rights reserved.</p>
   </footer>
-
 </div>
-
 {% if resAvail %}
 <!-- STICKY (mobile bottom bar) -->
 <a href="{{ resHref }}"{% if resExt %} target="_blank" rel="noopener"{% endif %} class="sticky-cta" style="text-decoration:none;" data-ga-event="reserve_click" data-ga-location="sticky_bar">
@@ -978,14 +931,12 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
   </div>
   <span class="sticky-btn">Reserve</span>
 </a>
-
 <!-- FLOATING (desktop bottom-right) -->
 <a href="{{ resHref }}"{% if resExt %} target="_blank" rel="noopener"{% endif %} class="float-reserve" data-ga-event="reserve_click" data-ga-location="fab">
   Check availability
   <svg width="16" height="10" viewBox="0 0 18 10" fill="none"><path d="M0 5h16M12 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
 </a>
 {% endif %}
-
 <script>
 // header scroll style
 (function(){
@@ -997,7 +948,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
   window.addEventListener('scroll', onScroll, {passive: true});
   onScroll();
 })();
-
 // reveal on scroll
 (function(){
   var els = document.querySelectorAll('.reveal');
@@ -1007,7 +957,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
   }, { threshold: 0.12 });
   els.forEach(function(e){ io.observe(e); });
 })();
-
 // tap-to-skip opening
 (function(){
   var op = document.getElementById('opening');
@@ -1017,8 +966,6 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
     if (pg){ pg.style.animation = 'none'; pg.style.opacity = '1'; }
   });
 })();
-
-{% if stores.brand.ga4_id %}
 // 広告ピクセルへのコンバージョン送信（予約クリック）
 (function(){
   document.addEventListener('click', function(e){
@@ -1031,25 +978,15 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
     if (typeof ttq === 'object' && ttq.track) ttq.track(name === 'reserve_click' ? 'SubmitForm' : 'Contact', label);
   }, true);
 })();
-
-// GA4 click event tracking
+// GTMへのイベント送信（store/channelなどのパラメータはGTM側でURLから解決するため、ここでは組み立てない）
 (function(){
-  if (typeof gtag !== 'function') return;
+  window.dataLayer = window.dataLayer || [];
   document.addEventListener('click', function(e){
     var el = e.target.closest('[data-ga-event]');
     if (!el) return;
-    var name = el.getAttribute('data-ga-event');
-    var loc = el.getAttribute('data-ga-location') || '';
-    gtag('event', name, {
-      'event_category': 'engagement',
-      'event_label': loc,
-      'store_name': '{{ store.slug }}',
-      'store_area': '{{ store.region }}',
-      'brand': '{{ stores.brand.brand_slug }}'
-    });
+    window.dataLayer.push({ event: el.getAttribute('data-ga-event') });
   }, true);
 })();
-{% endif %}
 </script>
 <!-- 構造化データ: Google検索に営業時間・住所・価格帯・メニューを出すため -->
 <script type="application/ld+json">
@@ -1096,3 +1033,4 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
 </script>
 </body>
 </html>
+```
