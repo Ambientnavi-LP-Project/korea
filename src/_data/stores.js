@@ -48,6 +48,7 @@ module.exports = {
       hours_note: "",
 
       // ===== 予約・地図 ===== ★あとで差し替え
+      reserve_system: "tablecheck",  // "tablecheck" | "form"
       tablecheck_url: "",       // 空 → 予約ボタンが電話リンクになります
       maps_link: "",
       maps_embed: "",
@@ -133,6 +134,7 @@ module.exports = {
       hours_note: "",
 
       // ===== 予約・地図 ===== ★あとで差し替え
+      reserve_system: "tablecheck",  // "tablecheck" | "form"
       tablecheck_url: "",
       maps_link: "",
       maps_embed: "",

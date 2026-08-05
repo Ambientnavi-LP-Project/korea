@@ -8,15 +8,13 @@ permalink: "/index.html"
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Halal Wagyu Myeongdong · Seoul</title>
 <meta name="description" content="Halal wagyu in Myeongdong, Seoul — Korean BBQ / Steak, Burger &amp; Pizza.">
-{% if stores.brand.ga4_id %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ stores.brand.ga4_id }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ stores.brand.ga4_id }}', { 'brand': '{{ stores.brand.brand_slug }}' });
-</script>
-{% endif %}
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5DGT9H6L');</script>
+<!-- End Google Tag Manager -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -45,6 +43,10 @@ footer p { font-family:'Oswald',sans-serif; font-size:10px; letter-spacing:.24em
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DGT9H6L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <main>
   <p class="eyebrow">Myeongdong · Seoul · 明洞</p>
   <h1>Halal <em>Wagyu</em><br>in Myeongdong</h1>

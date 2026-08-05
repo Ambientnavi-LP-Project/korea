@@ -60,6 +60,57 @@ CSS・レイアウト・アニメーションは一切触っていません。�
   `halal_text` / `footer_note`
 - **未指定なら元の文言のまま**なので、既存サイトに転用しても壊れません。
 
+## 計測イベント一覧
+
+このLPで実際に実装しているイベント。
+計測は **GTM コンテナ `GTM-5DGT9H6L`** 1本に集約している（トップページ・店舗ページの両方に設置）。
+
+| イベント名 | 発火する場所 | 実装 |
+|---|---|---|
+| `reserve_click` | ヘッダー／ヒーロー／予約セクション／下部固定バー／右下の追従ボタンの予約CTA（**`tablecheck_url` を入れた店舗でのみ**） | `data-ga-event="{{ resEvent }}"` |
+| `tel_click` | 店舗情報の電話番号リンク。加えて、`tablecheck_url` が空の店舗では上記の予約CTA5か所も電話リンクになるため `tel_click` として計測される（**現在は全2店舗がこれ**） | `data-ga-event="tel_click"` / `{{ resEvent }}` |
+| `map_click` | ヒーロー「Directions」／店舗情報の住所／地図ボタン（**`maps_link` を入れた店舗でのみ**） | `data-ga-event="map_click"` |
+| `outbound_click` | Tripadvisor セクションの「View on Tripadvisor」（**`tripadvisor.url` を入れた店舗でのみ**） | `data-ga-event="outbound_click"` |
+| `scroll_depth` | ページのスクロール到達率 | GTM組み込みトリガー（コード実装なし） |
+
+### 仕組み
+
+計測方式は **1つだけ**。計測したい要素に `data-ga-event="イベント名"` を付けると、
+ページ末尾の委譲リスナー1本が `dataLayer` に push する。
+
+```js
+window.dataLayer.push({ event: el.getAttribute('data-ga-event') });
+```
+
+店舗名・エリアなどの**パラメータはコード側で組み立てない**。
+GTM 側で URL（ホスト名／パス）から解決する。
+そのため `stores.js` に店舗を追加しても、計測用の設定を書き足す必要はない。
+
+予約CTAだけはイベント名が動的（`resEvent`）になっている。
+`tablecheck_url` が入っていれば `reserve_click`、空で電話リンクにフォールバックしたときは
+`tel_click` を送る。予約サイトへの遷移と電話発信を取り違えないための切り替え。
+
+### 現状の注意点
+
+**2店舗とも `tablecheck_url` / `maps_link` / `tripadvisor.url` が空**のため、
+実際に発火するのは `tel_click` だけ。値を `stores.js` に入れれば、
+テンプレート側は変更不要で他のイベントも計測されるようになる。
+
+### 実装していないもの
+
+- **地図の埋め込み（iframe）**は計測対象外。ブラウザの仕様上、iframe 内部のクリックは
+  親ページの JavaScript では検知できない。地図の反応は「Directions」リンクで見る。
+- `reservation_form_submit` / `final_check_view` は自社予約フォームを使うLP用。このLPは対象外。
+- `course_select` はコース選択UIがあるLP用。このLPのコース欄は一覧表示のみで選択操作がない。
+
+### 広告ピクセル（GTMとは別系統）
+
+Meta / TikTok ピクセルは GTM とは別に、同じ `data-ga-event` 属性を読んで
+`Lead` / `SubmitForm` / `Contact` を送っている（`meta_pixel_id` / `tiktok_pixel_id` を
+入れたときだけ動作）。GA4 側の計測とは独立しているため、今回の統一の対象外。
+
+---
+
 ## ★ TODO（届き次第うめます）
 
 ### 店舗データ（`src/_data/stores.js`）
@@ -75,7 +126,8 @@ CSS・レイアウト・アニメーションは一切触っていません。�
 ⚠ 現状 `tel_raw` も `tablecheck_url` も空なので、予約ボタンの href が `tel:+` になります。どちらか埋まれば解消します。
 
 ### ブランド（`brand`）
-- `ga4_id` — 空です。入れると GA4 タグと click イベント計測が有効になります（空なら丸ごと出力されません）
+- `meta_pixel_id` / `tiktok_pixel_id` — 空です。入れると広告ピクセルが出力されます（空なら丸ごと出力されません）
+  ※ GA4 の計測は GTM コンテナ `GTM-5DGT9H6L` 側で設定するため、`ga4_id` は持ちません
 
 ### 画像（`src/assets/`）
 
@@ -133,7 +185,7 @@ CSS・レイアウト・アニメーションは一切触っていません。�
 | `note` | 画像下の注記。**銀座本店の実績である旨の断り書き** |
 | `url` | Tripadvisorページ。入れると「View on Tripadvisor」ボタンが出ます |
 
-クリックは GA4 に `tripadvisor_click` として記録されます。
+クリックは `outbound_click` として計測されます（下の「計測イベント一覧」を参照）。
 
 ⚠ **注記（`note`）は消さないでください。** No.1 は銀座本店の実績であり、明洞の2店舗の実績ではありません。この断り書きが無いと、韓国の店舗が Tokyo No.1 を獲ったかのような誤認を与えます（画像内にも英語で同じ注記が入っています）。
 
