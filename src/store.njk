@@ -349,14 +349,17 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
   opacity: 0;
   animation: fadeIn 0.7s ease 2.3s forwards;
 }
+/* ヒーロー中央の店名。フル店名を表示するため折り返し前提の設定 */
 .hero-title {
   color: var(--white);
   font-family: 'Anton', sans-serif;
-  font-size: 26px;
-  letter-spacing: 0.04em;
+  font-size: 17px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  line-height: 1;
-  margin-bottom: 6px;
+  line-height: 1.18;
+  max-width: 22ch;
+  margin: 0 auto 6px;
+  text-wrap: balance;
   text-shadow: 0 2px 20px rgba(0,0,0,0.55);
   opacity: 0; transform: translateY(24px);
   animation: riseIn 0.8s cubic-bezier(.2,.8,.2,1) 2.5s forwards;
@@ -381,6 +384,7 @@ html.skip-opening .hero-img { animation: heroZoom 6s ease-out 0.1s forwards; }
   color: var(--red); background: var(--white);
   text-decoration: none;
   padding: 17px 40px;
+  margin-top: 22px;
   opacity: 0; transform: translateY(16px);
   animation: riseIn 0.7s ease 3.0s forwards;
   transition: background 0.25s ease, transform 0.25s ease;
@@ -690,7 +694,7 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
 /* ============ TABLET / DESKTOP ============ */
 @media (min-width: 700px) {
   .hero-kicker { font-size: 56px; }
-  .hero-title { font-size: 38px; }
+  .hero-title { font-size: 24px; max-width: 26ch; }
   .hero-supervised { font-size: 14px; margin-bottom: 18px; }
   .hero-cn { font-size: 13px; margin-bottom: 22px; }
   .hero-content { padding: 0 48px 32px; max-width: 760px; margin: 0 auto; }
@@ -716,7 +720,15 @@ footer p { font-size: 12px; opacity: 0.7; line-height: 1.7; }
 }
 @media (min-width: 1000px) {
   .hero-kicker { font-size: 64px; }
-  .hero-title { font-size: 42px; }
+  .hero-title { font-size: 28px; max-width: 30ch; }
+}
+/* モーション低減設定の尊重 */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .hero-kicker, .hero-title, .hero-supervised, .hero-cta, .hero-rule, .hero-haze { opacity: 1; transform: none; }
+  .sticky-cta { transform: none; }
+  .float-reserve { opacity: 1; }
+  .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
@@ -748,7 +760,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-rule"></div>
       <h1 class="hero-kicker">{{ C.hero_kicker or "WAGYU" }}</h1>
       <div class="hero-supervised">{{ C.hero_sub or "Halal · Muslim Friendly" }}</div>
-      <div class="hero-title">{{ store.name_short }}</div>
+      <div class="hero-title">{{ store.name_full_en }}</div>
       {% if resAvail %}
       <a href="{{ resHref }}"{% if resExt %} target="_blank" rel="noopener"{% endif %} class="hero-cta" data-ga-event="{{ resEvent }}" data-ga-location="hero">
         Reserve a seat
