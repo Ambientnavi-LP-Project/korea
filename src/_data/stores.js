@@ -29,15 +29,14 @@ module.exports = {
       slug: "kbbq",
 
       // ===== 店名 =====
-      name_full_en: "Wagyu Korean BBQ Halal KBBQ Gluten Free Myeongdong Restaurant 明洞韩式烧烤",
+      name_full_en: "Wagyu Korean BBQ Halal KBBQ Gluten Free Myeongdong Restaurant",
       name_short: "Myeongdong KBBQ",
-      name_cn: "明洞韩式烧烤",
 
-      // ===== 立地 ===== ★あとで差し替え
+      // ===== 立地 =====
       city: "Myeongdong",
       pref: "Seoul",
-      address_en: "1F, 23 Myeongdong 4-gil, Jung-gu Seoul",
-      address_postal: "04536",       // TODO: 郵便番号（韓国の5桁。例 04536）
+      address_en: "1F, 57-108 Mangwon-dong, Mapo-gu, Seoul",
+      address_postal: "04014",
 
       // ===== 連絡先 =====
       tel_display: "010-9871-5765",
