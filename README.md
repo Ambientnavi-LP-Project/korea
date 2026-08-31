@@ -231,3 +231,10 @@ Meta / TikTok ピクセルは GTM とは別に、同じ `data-ga-event` 属性�
 | `assets/tripadvisor.jpg` | 両店：Tripadvisorセクション |
 
 **KBBQ店は写真が1枚しかないため、ギャラリーを「1枚大きく表示」にしています**（`gallery_images: []` にすると njk 側のフォールバックが効きます）。別カットが2枚そろったら、`stores.js` のコメントアウトを戻すだけで2カラムのギャラリーになります。
+
+## 計測要件
+
+LPの作成・デザイン変更・テンプレート追加を行う際は、必ず以下を参照すること。
+CTAの書き方やTableCheckのURL指定を誤ると、広告のコンバージョン計測が停止する。
+
+https://github.com/Ambientnavi-LP-Project/omakase/blob/main/docs/LP%E4%BD%9C%E6%88%90%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88.md
