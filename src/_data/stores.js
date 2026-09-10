@@ -29,7 +29,7 @@ module.exports = {
       slug: "kbbq",
 
       // ===== 店名 =====
-      name_full_en: "Wagyu Korean BBQ Halal KBBQ Gluten Free Myeongdong Restaurant",
+      name_full_en: "Wagyu Korean BBQ Myeongdong Restaurant",
       name_short: "Myeongdong KBBQ",
 
       // ===== 立地 =====
@@ -114,7 +114,7 @@ module.exports = {
       slug: "steakburgerpizza",
 
       // ===== 店名 =====
-      name_full_en: "Wagyu Korean Hamburger Steak Pizza Halal Vegan Myeongdong Restaurant 明洞和牛餐厅",
+      name_full_en: "Wagyu Korean Hamburger Steak Pizza Halal Vegan Myeongdong Restaurant",
       name_short: "Myeongdong Steak",
       name_cn: "明洞和牛餐厅",
 
