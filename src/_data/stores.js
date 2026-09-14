@@ -29,14 +29,14 @@ module.exports = {
       slug: "kbbq",
 
       // ===== 店名 =====
-      name_full_en: "Wagyu Korean BBQ Myeongdong Restaurant",
+      name_full_en: "Wagyu Korean BBQ Halal Myeongdong Restaurant",
       name_short: "Myeongdong KBBQ",
 
       // ===== 立地 =====
       city: "Myeongdong",
       pref: "Seoul",
-      address_en: "1F, 57-108 Mangwon-dong, Mapo-gu, Seoul",
-      address_postal: "04014",
+      address_en: "1F, 8-25 Myeongdong 8-gil, Jung-gu, Seoul",
+      address_postal: "04536",
 
       // ===== 連絡先 =====
       tel_display: "010-9871-5765",
