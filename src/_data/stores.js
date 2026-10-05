@@ -43,7 +43,7 @@ module.exports = {
       tel_raw: "821098715765",  // +82 + 先頭の0を除いた番号
 
       // ===== 営業 ===== ★あとで差し替え
-      hours: "10:00 – 01:00",
+      hours: "11:00 – 01:00",
       hours_note: "",
 
       // ===== 予約・地図 ===== ★あとで差し替え
@@ -61,7 +61,7 @@ module.exports = {
       address_country: "KR",
       currency: "KRW",
       price_range: "",          // TODO: 例 "₩₩₩"
-      opens: "10:00",           // TODO: 実際の開店時刻（24h表記）
+      opens: "11:00",           // TODO: 実際の開店時刻（24h表記）
       closes: "01:00",          // TODO: 実際の閉店時刻
       geo_lat: "",              // TODO: 緯度（Googleマップから）
       geo_lng: "",              // TODO: 経度
@@ -129,7 +129,7 @@ module.exports = {
       tel_raw: "821032805765",  // +82 + 先頭の0を除いた番号
 
       // ===== 営業 ===== ★あとで差し替え
-      hours: "10:00 – 01:00",
+      hours: "11:00 – 01:00",
       hours_note: "",
 
       // ===== 予約・地図 ===== ★あとで差し替え
@@ -147,7 +147,7 @@ module.exports = {
       address_country: "KR",
       currency: "KRW",
       price_range: "",          // TODO: 例 "₩₩₩"
-      opens: "10:00",           // TODO: 実際の開店時刻（24h表記）
+      opens: "11:00",           // TODO: 実際の開店時刻（24h表記）
       closes: "01:00",          // TODO: 実際の閉店時刻
       geo_lat: "",              // TODO: 緯度（Googleマップから）
       geo_lng: "",              // TODO: 経度
