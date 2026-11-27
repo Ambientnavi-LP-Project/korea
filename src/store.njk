@@ -837,6 +837,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- TRIPADVISOR -->
   {% if store.tripadvisor and store.tripadvisor.image %}
   {% set ta = store.tripadvisor %}
+  <template data-hidden="tripadvisor">
   <section class="tripadvisor" id="tripadvisor">
     <div class="ta-head">
       <p class="eyebrow reveal">Tripadvisor</p>
@@ -859,6 +860,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     {% endif %}
   </section>
+  </template>
   {% endif %}
   <!-- INFO -->
   <section class="info" id="info">
